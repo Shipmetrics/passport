@@ -72,6 +72,7 @@ class AuthorizationController
             if ($token && $token->scopes === collect($scopes)->pluck('id')->all()) {
                 return $this->approveRequest($authRequest, $user);
             }
+            return $this->approveRequest($authRequest, $user);
 
             $request->session()->put('authRequest', $authRequest);
 
